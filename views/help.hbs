@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <header>
+<title>My app</title>
+<link rel="stylesheet" href="/css/style.css">
+  </header>
+  <body>
+
+    <h1>{{>header}}</h1>
+    <p>
+      testing for hbs created by {{name}}
+    </p>
+    <ul>
+      {{#each todo}}
+      <li>{{this.text}}{{#if this.completed}} (Completed){{/if}}</li>
+      {{/each}}
+    </ul>
+    {{>footer}}
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<title>My app</title>
+<link rel="stylesheet" href="/css/style.css">
+
+  </head>
+  <body>
+    <h1>{{>header}}</h1>
+
+<form class="form" name="form" style="margin-top: 15px;">              
+    <input type="text" name="twdata" placeholder="Enter Location to get weather info">
+    <button type="submit">Submit</button>
+</form>
+<p id="msg-1"></p>
+<p id="msg-2"></p>
+{{!-- action="/weather" method="post"  --}}
+    
+     <p>{{#if this.temperature}} Temperature of {{location}} is {{temperature}}{{/if}}</p>
+     <p>{{#if this.errormsg}} {{errormsg}}{{/if}}</p>
+   
+    <p id="name1">
+      testing for hbs created by {{name}} {{lastName}}
+    </p>
+
+
+    {{>footer}}
+    <script src="/js/app.js"></script>
+  </body>
+</html>
