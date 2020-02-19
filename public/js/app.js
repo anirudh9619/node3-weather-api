@@ -20,7 +20,7 @@ weather.addEventListener('submit',(e)=>{
     msgTwo.textContent=''
     
     if(loc){
-    fetch(`http://localhost:3000/weather?twdata=${loc}`).then((response)=>{
+    fetch(`/weather?twdata=${loc}`).then((response)=>{
     //  console.log(response)
     response.json().then((data)=>{
         msgOne.textContent="Location: "+data.location

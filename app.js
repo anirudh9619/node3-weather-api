@@ -6,6 +6,7 @@ const weather=require('./weather/weather')
 const hbs=require('hbs')
 //const htm=require('./assets')
 const app=express()
+const port =process.env.PORT || 3000
 const todos = [{
     "text": "Email back head office",
     "completed": true
@@ -114,6 +115,6 @@ app.get('*',(req,res)=>{
         'title':"404 not found"
     })
 })
-app.listen(3000,()=>{
-    console.log("App Server started")
+app.listen(port,()=>{
+    console.log("App Server started on ",port)
 })
