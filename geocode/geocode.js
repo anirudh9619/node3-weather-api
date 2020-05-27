@@ -6,7 +6,7 @@ const latlong=(place,callback)=>{
     const url=`https://api.mapbox.com/geocoding/v5/mapbox.places/${placeEncode}.json?access_token=${token}&limit=1`
     request({'url':url,'json':true},(error,response,body)=>{
         if(error){
-        console.log("Unable to coonect location service! Try after some time.")  
+        console.log("Unable to connect location service! Try after some time.")  
         callback(error,undefined);
         } else if(!body.features[0]){
             console.log("unable to locate your given location, try another search") 
