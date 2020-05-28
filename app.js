@@ -6,8 +6,8 @@ const weather=require('./weather/weather')
 const hbs=require('hbs')
 //const htm=require('./assets')
 const app=express()
-const port =process.env.OPENSHIFT_NODEJS_PORT || 8080;
-const server_ip =process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+// const port =process.env.OPENSHIFT_NODEJS_PORT || 8080;
+// const server_ip =process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 const todos = [{
     "text": "Email back head office",
     "completed": true
@@ -116,6 +116,10 @@ app.get('*',(req,res)=>{
         'title':"404 not found"
     })
 })
-app.listen(port,server_ip,()=>{
-    console.log("App Server started on ",port)
-})
+// app.listen(port,server_ip,()=>{
+//     console.log("App Server started on ",port)
+// })
+var server = app.listen(8080, function(){
+    var port = server.address().port;
+    console.log("Server started at http://localhost:%s", port);
+});
